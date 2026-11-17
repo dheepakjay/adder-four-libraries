@@ -5,6 +5,9 @@ Reproduces the worked example from "Logic Synthesis from the Ground Up", article
 The same RTL (a half adder and an 8-bit adder) is mapped with Yosys and ABC against four versions of the
 open Nangate 45 nm typical Liberty library. Delay comes from sta.py, a small table-based calculator.
 
+## Open in Colab
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dheepakjay/adder-four-libraries/blob/main/adder-four-libraries.ipynb)
+
 ## Run
 
     pip install yowasp-yosys==0.71.0.0.post1285
