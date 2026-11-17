@@ -7,7 +7,7 @@ open Nangate 45 nm typical Liberty library. Delay comes from sta.py, a small tab
 
 ## Run
 
-    pip install yowasp-yosys     # or install Yosys itself
+    pip install yowasp-yosys==0.71.0.0.post1285
     ./run.sh
 
 Run it from inside this folder: the pip build of Yosys can only see the current directory.
@@ -29,4 +29,6 @@ Run it from inside this folder: the pip build of Yosys can only see the current 
 - One mapper (ABC), one run per cell of the table. Commercial tools will choose differently.
 - The Nangate library has half-adder and full-adder cells. ABC maps to single-output cells only, so it never uses them.
 - run_all.py ends with a check against the unmodified library, which keeps HA_X1 and FA_X1. They are not used.
-- Small differences in your Yosys version can move individual numbers a little.
+- The Yosys version matters. The numbers in the article come from Yosys 0.71, which bundles its own ABC.
+  Yosys 0.70 gave different 8-bit results (for example 257 ps instead of 280 ps for the full library at the tight target),
+  while the half adder stayed the same. Keep the pinned version to get the same numbers.

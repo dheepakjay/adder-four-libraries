@@ -8,6 +8,7 @@ import sta
 
 YOSYS = shutil.which('yosys') or shutil.which('yowasp-yosys')
 if not YOSYS: sys.exit('yosys not found on PATH')
+print(subprocess.run([YOSYS, '-V'], capture_output=True, text=True).stdout.strip().split(' (')[0])
 LIBS = [('Full library', 'lib_full'), ('No XOR or XNOR cells', 'lib_noxor'),
         ('NAND2, NOR2, INV and BUF only', 'lib_nand'), ('Full library, X1 drive only', 'lib_x1')]
 TARGETS = [('tight', 100), ('relaxed', 600)]      # ABC delay target in ps
